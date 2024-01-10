@@ -90,7 +90,7 @@ base = base[base['Data'].isin(options)]
 grafico = px.line(base, x=base['Data'], y=base['valor'],text=base.valor)
 grafico = grafico.update_traces(textposition="top center")
 #respeitar tamanho
-
+st.plotly_chart(grafico, use_container_width=True)
 
 Dataset = base.loc[:,['mesReferencia','anoReferencia','valor']]
 
@@ -168,6 +168,6 @@ if len(Dataset)>2:
 
   grafico_previsao = px.line(previsao_calendario,x=previsao_calendario['Data'],y=previsao_calendario['Valores_Previstos'],text=previsao_calendario.Valores_Previstos)
   grafico_previsao = grafico_previsao.update_traces(textposition="top center")
-
+  st.plotly_chart(grafico_previsao, use_container_width=True) #respeitar tamanho
 else:
   st.header('Não foi possível fazer previsão poucos dados')
