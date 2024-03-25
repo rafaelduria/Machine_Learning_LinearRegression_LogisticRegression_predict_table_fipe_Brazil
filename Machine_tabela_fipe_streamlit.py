@@ -11,10 +11,10 @@ from sklearn.ensemble import RandomForestRegressor
 #Lendo Base de dados
 @st.cache_data
 def busca_cache(url):
-    base = read_csv(url)
+    base = pd.read_csv(url)
     return base
     
-base = busca_cache("https://raw.githubusercontent.com/rafaelduria/Machine_Learning_LinearRegression_LogisticRegression_predict_table_fipe_Brazil/main/tabela_fipe_historico_precos.csv")
+base = busca_cache("https://raw.githubusercontent.com/rafaelduria/Machine_Learning_LinearRegression_LogisticRegression_predict_table_fipe_Brazil/main/tabela_fipe_historico_precos.csv", sep=',')
 
 base.drop(['Unnamed: 0'], axis=1, inplace=True)
 base['marca'] = base['marca'].str.upper()
