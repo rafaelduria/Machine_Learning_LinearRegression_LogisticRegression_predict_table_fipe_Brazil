@@ -10,28 +10,34 @@ from sklearn.ensemble import RandomForestRegressor
 
 #Lendo Base de dados
 @st.cache
-base = pd.read_csv("https://raw.githubusercontent.com/rafaelduria/Machine_Learning_LinearRegression_LogisticRegression_predict_table_fipe_Brazil/main/tabela_fipe_historico_precos.csv", sep=',')
-base.drop(['Unnamed: 0'], axis=1, inplace=True)
-base['marca'] = base['marca'].str.upper()
-base['modelo'] = base['modelo'].str.upper()
-base['Drop'] = base['anoModelo'] - base['anoReferencia']
-base = base[(base.Drop <0)]
-#excluindo coluna
-base.drop(['Drop'], axis=1, inplace=True)
-#convertendo para inteiro
-base[['anoModelo','mesReferencia','anoReferencia']] = base[['anoModelo','mesReferencia','anoReferencia']].astype(int)
-#ordenando colunas ano e mes
-base = base.sort_values(by=['anoReferencia' ,'mesReferencia'], ignore_index = True, ascending = True)
-#Concatenando colunas "/"
-base['Data'] = base['mesReferencia'].map(str) + '/' + base  ['anoReferencia'].map(str)
-#Convertendo para data
-base['Data'] = pd.to_datetime(base['Data'], dayfirst=True)
-#ordenando data
-base['Data'] = base['Data'].dt.strftime('%m/%Y')
-#Concatenando colunas "/"
-base['anoModelo'] =  '01/01/' + base  ['anoModelo'].map(str)
-base['anoModelo'] = pd.to_datetime(base['anoModelo'], dayfirst=True)
-base['anoModelo'] = base['anoModelo'].dt.strftime('%Y')
+df busca_df():
+    base = pd.read_csv("https://raw.githubusercontent.com/rafaelduria/Machine_Learning_LinearRegression_LogisticRegression_predict_table_fipe_Brazil/main/tabela_fipe_historico_precos.csv", sep=',')
+    base.drop(['Unnamed: 0'], axis=1, inplace=True)
+    base['marca'] = base['marca'].str.upper()
+    base['modelo'] = base['modelo'].str.upper()
+    base['Drop'] = base['anoModelo'] - base['anoReferencia']
+    base = base[(base.Drop <0)]
+    #excluindo coluna
+    base.drop(['Drop'], axis=1, inplace=True)
+    #convertendo para inteiro
+    base[['anoModelo','mesReferencia','anoReferencia']] = base[['anoModelo','mesReferencia','anoReferencia']].astype(int)
+    #ordenando colunas ano e mes
+    base = base.sort_values(by=['anoReferencia' ,'mesReferencia'], ignore_index = True, ascending = True)
+    #Concatenando colunas "/"
+    base['Data'] = base['mesReferencia'].map(str) + '/' + base  ['anoReferencia'].map(str)
+    #Convertendo para data
+    base['Data'] = pd.to_datetime(base['Data'], dayfirst=True)
+    #ordenando data
+    base['Data'] = base['Data'].dt.strftime('%m/%Y')
+    #Concatenando colunas "/"
+    base['anoModelo'] =  '01/01/' + base  ['anoModelo'].map(str)
+    base['anoModelo'] = pd.to_datetime(base['anoModelo'], dayfirst=True)
+    base['anoModelo'] = base['anoModelo'].dt.strftime('%Y')
+
+    return base
+
+base = busca_df()
+
 #.\env\Scripts\activate.ps1
 # streamlit run FIPE.py
 #Base para Machine Learning
