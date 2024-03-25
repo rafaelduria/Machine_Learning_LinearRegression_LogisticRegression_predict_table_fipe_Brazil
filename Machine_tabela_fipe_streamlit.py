@@ -9,7 +9,7 @@ from sklearn import metrics
 from sklearn.ensemble import RandomForestRegressor
 
 #Lendo Base de dados
-@st.cache
+@st.cache_data
 df busca_cache():
     base = pd.read_csv("https://raw.githubusercontent.com/rafaelduria/Machine_Learning_LinearRegression_LogisticRegression_predict_table_fipe_Brazil/main/tabela_fipe_historico_precos.csv", sep=',')
     return base
