@@ -12,6 +12,11 @@ from sklearn.ensemble import RandomForestRegressor
 @st.cache
 df busca_df():
     base = pd.read_csv("https://raw.githubusercontent.com/rafaelduria/Machine_Learning_LinearRegression_LogisticRegression_predict_table_fipe_Brazil/main/tabela_fipe_historico_precos.csv", sep=',')
+    return base
+
+base = busca_df()
+
+
     base.drop(['Unnamed: 0'], axis=1, inplace=True)
     base['marca'] = base['marca'].str.upper()
     base['modelo'] = base['modelo'].str.upper()
@@ -33,10 +38,6 @@ df busca_df():
     base['anoModelo'] =  '01/01/' + base  ['anoModelo'].map(str)
     base['anoModelo'] = pd.to_datetime(base['anoModelo'], dayfirst=True)
     base['anoModelo'] = base['anoModelo'].dt.strftime('%Y')
-
-    return base
-
-base = busca_df()
 
 #.\env\Scripts\activate.ps1
 # streamlit run FIPE.py
