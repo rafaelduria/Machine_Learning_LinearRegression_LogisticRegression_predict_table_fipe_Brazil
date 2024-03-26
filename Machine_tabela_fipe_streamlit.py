@@ -44,7 +44,7 @@ base['anoModelo'] = base['anoModelo'].dt.strftime('%Y')
 
 
 #deixar página tamanho grande
-st.set_page_config(layout='wide')
+#st.set_page_config(layout='wide')
 #Titulo
 st.header('Tabela Fipe')
 
