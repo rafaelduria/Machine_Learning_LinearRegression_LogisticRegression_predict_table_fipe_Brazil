@@ -55,7 +55,7 @@ st.header('Tabela Fipe')
 #)
 
 #Barra lateral esquerda
-htp="https://raw.githubusercontent.com/rafaelduria/Machine_Learning_LinearRegression_LogisticRegression_predict_table_fipe_Brazil/blob/main/img_fipe.png"
+htp="https://raw.githubusercontent.com/rafaelduria/Machine_Learning_LinearRegression_LogisticRegression_predict_table_fipe_Brazil/blob/main/img_fipe.svg.png"
 st.sidebar.image(htp, width=150)
 #titulo
 st.sidebar.title('Filtro')
