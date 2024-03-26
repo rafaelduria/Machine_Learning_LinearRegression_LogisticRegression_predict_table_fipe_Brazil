@@ -55,7 +55,8 @@ st.header('Tabela Fipe')
 #)
 
 #Barra lateral esquerda
-st.sidebar.image('https://raw.githubusercontent.com/rafaelduria/Machine_Learning_LinearRegression_LogisticRegression_predict_table_fipe_Brazil/blob/main/img_fipe.png')
+htp="https://raw.githubusercontent.com/rafaelduria/Machine_Learning_LinearRegression_LogisticRegression_predict_table_fipe_Brazil/blob/main/img_fipe.png"
+st.sidebar.image(htp)
 #titulo
 st.sidebar.title('Filtro')
 #lista marca carros tabela fipe
