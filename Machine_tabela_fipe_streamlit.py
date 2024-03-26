@@ -8,6 +8,9 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn.ensemble import RandomForestRegressor
 
+#deixar página tamanho grande
+st.set_page_config(layout="wide")
+
 #Lendo Base de dados
 @st.cache_data
 def busca_cache(suppress_st_warning=True):
@@ -37,15 +40,6 @@ def busca_cache(suppress_st_warning=True):
     
 base = busca_cache()
 
-
-
-#.\env\Scripts\activate.ps1
-# streamlit run FIPE.py
-#Base para Machine Learning
-
-
-#deixar página tamanho grande
-st.set_page_config(layout="wide")
 #Titulo
 st.header('Tabela Fipe')
 
@@ -59,7 +53,6 @@ st.header('Tabela Fipe')
     #""",
     #unsafe_allow_html=True,
 #)
-
 
 #Barra lateral esquerda
 #titulo
