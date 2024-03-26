@@ -81,7 +81,7 @@ base = base.loc[(base['modelo'] == Modelo_Escolhido)]
 #lista modelos carros tabela fipe
 Lista_anoModelo = list(base['anoModelo'].unique())
 #ordenando lista Lista_Modelos
-Lista_anoModelo = sorted(Lista_anoModelo)
+Lista_anoModelo = sorted(Lista_anoModelo, reverse=True)
 anoModelo_Escolhido = st.sidebar.selectbox(label = 'Ano Modelo', options = Lista_anoModelo)
 #filtrando base de base conforme filtro  Fabricante_Escolhido
 base = base.loc[(base['anoModelo'] == anoModelo_Escolhido)]
