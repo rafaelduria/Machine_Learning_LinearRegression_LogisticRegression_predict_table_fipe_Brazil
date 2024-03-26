@@ -45,7 +45,7 @@ base = busca_cache()
 
 
 #deixar página tamanho grande
-st.set_page_config(layout="centered")
+#st.set_page_config(layout="centered")
 #Titulo
 st.header('Tabela Fipe')
 
