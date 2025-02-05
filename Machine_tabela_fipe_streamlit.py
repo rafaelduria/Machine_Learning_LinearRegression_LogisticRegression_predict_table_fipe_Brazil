@@ -157,7 +157,7 @@ if len(Dataset)>2:
   y_previsto = modelo.predict(X_test)
   #Quanto_linha = ('R² = {} Quanto a linha de regressao ajusta-se aos dados'.format(modelo.score(X_train, y_train).round(2)))
   ### Gerando previsões para os dados de TESTE (X_test) utilizando o método *predict()* do objeto "modelo"
-  st.write(Quanto_linha)
+  #st.write(Quanto_linha)
   ### Obtendo o coeficiente de determinação (R²) para as previsões do nosso modelo
   try:
       R2_ = 'R² = %s Previsões do nosso modelo' % metrics.r2_score(y_test, y_previsto).round(2)
